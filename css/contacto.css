@@ -1,0 +1,202 @@
+/* Notificación elegante */
+.time-notification {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: #1a1714;
+  border: 1px solid #bf7c1a;
+  border-left: 4px solid #bf7c1a;
+  color: #f0ece4;
+  padding: 12px 24px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(191,124,26,0.2);
+  z-index: 10001;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.time-notification.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Modal de horarios */
+.time-picker-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  font-family: 'Raleway', sans-serif;
+}
+
+.time-picker-modal.visible {
+  display: block;
+}
+
+.time-picker-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(4px);
+}
+
+.time-picker-container {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background: #141210;
+  border: 1px solid rgba(191,124,26,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(191,124,26,0.2);
+  z-index: 10000;
+}
+
+.time-picker-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(191,124,26,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a0908;
+}
+
+.time-picker-header h3 {
+  font-family: 'Rye', serif;
+  font-size: 1.2rem;
+  color: #f0ece4;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.time-picker-header .time-picker-day {
+  color: #bf7c1a;
+  font-style: italic;
+}
+
+.time-picker-close {
+  background: none;
+  border: none;
+  color: rgba(240,236,228,0.4);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 32px; height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.time-picker-close:hover {
+  color: #bf7c1a;
+}
+
+.time-picker-grid {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-height: 350px;
+  overflow-y: auto;
+  background: #141210;
+}
+
+.time-picker-slot {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(191,124,26,0.2);
+  color: rgba(240,236,228,0.7);
+  padding: 12px 6px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0;
+  text-align: center;
+}
+
+.time-picker-slot:hover {
+  background: rgba(191,124,26,0.15);
+  border-color: #bf7c1a;
+  color: #f0ece4;
+}
+
+.time-picker-no-slots {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  color: #8a8580;
+  font-style: italic;
+}
+
+/* Estilo para el campo de tiempo */
+.time-picker-trigger {
+  cursor: pointer !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23bf7c1a' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  background-size: 18px !important;
+}
+
+/* Scroll personalizado */
+.time-picker-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.time-picker-grid::-webkit-scrollbar-track {
+  background: #1a1714;
+}
+
+.time-picker-grid::-webkit-scrollbar-thumb {
+  background: #bf7c1a;
+}
+
+/* Animación sutil para el campo día cuando se requiere */
+@keyframes gentlePulse {
+  0%, 100% { border-color: rgba(191,124,26,0.2); }
+  50% { border-color: #bf7c1a; }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .time-picker-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ── CONTACT ── */
+.select-wrap::after{content:'';position:absolute;right:12px;top:50%;transform:translateY(-50%);width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid rgba(255,255,255,.28);pointer-events:none;transition:border-color .2s;}
+.select-wrap:focus-within::after{border-top-color:var(--gold);}
+select.form-field{appearance:none;cursor:pointer;color:rgba(255,255,255,.28);}
+select.form-field option{color:#f0ece4;background:#1a1917;}
+select.form-field:focus,select.form-field:valid{color:#f0ece4;}
+.form-field:focus{border-color:var(--gold);background:rgba(255,255,255,.06);}
+.form-field::placeholder{color:rgba(255,255,255,.28);}
+
+/* ── Fade bottom imagen ── */
+.contact-img-fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 38%;
+  background: linear-gradient(to top,
+    #0a0908        0%,
+    rgba(10,9,8,.78) 30%,
+    rgba(10,9,8,.3)  62%,
+    transparent      100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── Success ── */
+#ct-success { display:none; padding:24px 0 0; font-family:'Raleway',sans-serif; }
+#ct-success.visible { display:block; }
+#ct-success strong { display:block; font-size:.9rem; color:#f0ece4; margin-bottom:6px; }
+#ct-success p { font-size:.8rem; color:#8a8580; line-height:1.8; }

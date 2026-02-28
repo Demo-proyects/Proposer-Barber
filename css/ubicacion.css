@@ -1,0 +1,223 @@
+/* ══ LOCATION ══ */
+/* ── Overline — simétrico con línea antes y después ── */
+  .location-overline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .location-overline::before {
+    content: '';
+    width: 28px; height: 1px;
+    flex-shrink: 0;
+    background: linear-gradient(to left, rgba(191,124,26,.5), transparent);
+  }
+  .location-overline::after {
+    content: '';
+    width: 120px; height: 1px;
+    flex-shrink: 0;
+    background: linear-gradient(to right, rgba(191,124,26,.4), transparent);
+  }
+
+  /* ── Ghost number ── */
+  .loc-ghost-num {
+    position: absolute;
+    right: 0; top: -24px;
+    font-family: 'Rye', serif;
+    font-size: 9rem;
+    line-height: 1;
+    letter-spacing: -4px;
+    pointer-events: none;
+    user-select: none;
+    color: #bf7c1a;
+    opacity: 0.06;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,.95) 0%, rgba(0,0,0,.2) 65%, transparent 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,.95) 0%, rgba(0,0,0,.2) 65%, transparent 100%);
+  }
+
+  /* ── Header rule ── */
+  .loc-header-rule {
+    width: 48px; height: 1px;
+    background: linear-gradient(90deg, rgba(191,124,26,.55), transparent);
+    margin: 13px 0;
+  }
+
+  /* ── Media grid ── */
+  .location-media-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  @media (min-width: 768px) {
+    .location-media-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── Map frame ── */
+  .location-map-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+  }
+  @media (min-width: 768px) {
+    .location-map-wrap { height: 400px; }
+  }
+  .location-map-wrap iframe {
+    display: block;
+    width: 100%; height: 100%;
+    border: 0;
+    /* Dark map: invert + hue-rotate */
+    filter: invert(1) hue-rotate(180deg) brightness(.82) saturate(.65);
+    transition: filter .4s;
+  }
+  .location-map-wrap:hover iframe {
+    filter: invert(1) hue-rotate(180deg) brightness(.9) saturate(.8);
+  }
+  /* Gold border overlay */
+  .location-map-wrap::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 1px solid rgba(191,124,26,.22);
+    pointer-events: none;
+    z-index: 2;
+  }
+  /* Top-left corner mark */
+  .location-map-wrap::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px;
+    width: 18px; height: 18px;
+    border-top: 1px solid rgba(191,124,26,.5);
+    border-left: 1px solid rgba(191,124,26,.5);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* ── Photo frame ── */
+  .location-photo-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+  }
+  @media (min-width: 768px) {
+    .location-photo-wrap { height: 400px; }
+  }
+  .location-photo-wrap img {
+    display: block;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: sepia(20%) contrast(1.04) brightness(.88);
+    transition: transform .6s cubic-bezier(.4,0,.2,1), filter .4s;
+  }
+  .location-photo-wrap:hover img {
+    transform: scale(1.04);
+    filter: sepia(8%) contrast(1.06) brightness(.93);
+  }
+  /* Gold tint overlay */
+  .location-photo-wrap::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(191,124,26,.06) 0%, transparent 60%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  /* Bottom vignette */
+  .location-photo-wrap .photo-vignette {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(10,9,8,.6) 0%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+  }
+  /* Gold border overlay */
+  .location-photo-wrap::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 1px solid rgba(191,124,26,.2);
+    z-index: 4;
+    pointer-events: none;
+  }
+  /* Bottom-right corner mark */
+  .photo-corner-mark {
+    position: absolute;
+    bottom: 8px; right: 8px;
+    width: 18px; height: 18px;
+    border-bottom: 1px solid rgba(191,124,26,.5);
+    border-right: 1px solid rgba(191,124,26,.5);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* ── Info cards grid ── */
+  .location-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 768px) {
+    .location-info-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* ── Info card ── */
+  .loc-info-card {
+    background: #141210;
+    padding: 24px 20px;
+    border: 1px solid rgba(191,124,26,.1);
+    position: relative;
+    overflow: hidden;
+    transition: border-color .3s;
+  }
+  /* Bottom gold line — slide in on hover */
+  .loc-info-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold, #bf7c1a), transparent);
+    transform: scaleX(0);
+    transition: transform .4s cubic-bezier(.4,0,.2,1);
+  }
+  .loc-info-card:hover { border-color: rgba(191,124,26,.28); }
+  .loc-info-card:hover::after { transform: scaleX(1); }
+
+  /* Icon ring — reacts to hover */
+  .loc-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(191,124,26,.1);
+    border: 1px solid rgba(191,124,26,.25);
+    display: flex; align-items: center; justify-content: center;
+    color: #bf7c1a;
+    margin-bottom: 14px;
+    transition: background .3s, border-color .3s;
+  }
+  .loc-info-card:hover .loc-icon {
+    background: rgba(191,124,26,.18);
+    border-color: rgba(191,124,26,.5);
+  }
+
+  .loc-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: .67rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #f0ece4;
+    margin-bottom: 7px;
+  }
+  .loc-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: .74rem;
+    color: #8a8580;
+    line-height: 1.65;
+  }
+  /* Noise grain on cards */
+  .loc-info-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 200px;
+    opacity: .025;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .loc-info-card > * { position: relative; z-index: 1; }

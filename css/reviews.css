@@ -1,0 +1,22 @@
+#reviews{--rv-gold:#bf7c1a;}
+.rv-track{cursor:grab;}.rv-track:active{cursor:grabbing;}
+.rv-track .swiper-wrapper{align-items:stretch;}
+.rv-card{background:#0f0e0c;border:1px solid rgba(191,124,26,.1);padding:36px 32px 30px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden;transition:border-color .35s,transform .35s;height:auto;}
+.rv-card::before{content:'\201C';font-family:'Rye',serif;position:absolute;top:-18px;right:22px;font-size:9rem;line-height:1;color:rgba(191,124,26,.06);pointer-events:none;transition:color .35s;}
+.rv-card:hover{border-color:rgba(191,124,26,.32);transform:translateY(-4px);}
+.rv-card:hover::before{color:rgba(191,124,26,.1);}
+.rv-stars{display:flex;gap:4px;}
+.rv-star{width:11px;height:11px;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);background:var(--rv-gold);opacity:.9;}
+.rv-star.half{opacity:.35;}
+.rv-text{font-family:'Raleway',sans-serif;font-size:.82rem;line-height:1.85;color:#7a7672;flex:1;position:relative;z-index:1;}
+.rv-author{display:flex;align-items:center;gap:14px;margin-top:auto;}
+.rv-avatar{width:40px;height:40px;border-radius:50%;background:rgba(191,124,26,.08);border:1px solid rgba(191,124,26,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Rye',serif;font-size:.72rem;color:var(--rv-gold);letter-spacing:.06em;transition:background .3s,border-color .3s;}
+.rv-card:hover .rv-avatar{background:rgba(191,124,26,.14);border-color:rgba(191,124,26,.45);}
+.rv-name{font-family:'Raleway',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#d4cfc8;line-height:1.2;}
+.rv-service{font-family:'Raleway',sans-serif;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(191,124,26,.55);margin-top:3px;}
+.rv-source{position:absolute;top:18px;right:18px;font-family:'Raleway',sans-serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(191,124,26,.3);z-index:1;}
+.rv-pagination .swiper-pagination-bullet{width:6px;height:6px;background:rgba(191,124,26,.22);border-radius:0;opacity:1;transition:background .3s,transform .3s;}
+.rv-pagination .swiper-pagination-bullet-active{background:var(--rv-gold);transform:scaleX(2.8);}
+.rv-scrollbar{margin-top:32px!important;}
+.rv-scrollbar .swiper-scrollbar-drag{background:rgba(191,124,26,.45);}
+.swiper-scrollbar{background:rgba(191,124,26,.08)!important;}
