@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Proposer-Barber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Rye&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{gold:'#bf7c1a','gold-lt':'#d4952a','gold-dk':'#9a6010',twht:'#f0ece4',tgry:'#8a8580'},fontFamily:{rye:['Rye','serif'],rally:['Raleway','sans-serif']}}}}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+<!-- Swiper (mobile carousel) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/team.css">
+<link rel="stylesheet" href="css/contacto.css">
+<link rel="stylesheet" href="css/faq.css">
+<link rel="stylesheet" href="css/portfolio.css">
+<link rel="stylesheet" href="css/reviews.css">
+<link rel="stylesheet" href="css/ubicacion.css">
+
+<script>
+  (function(){
+    var canvas = document.createElement('canvas');
+    if(!canvas.getContext || !canvas.getContext('2d')) return;
+    if(canvas.toDataURL('image/webp').indexOf('data:image/webp') !== 0) return;
+
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('img').forEach(function(img){
+        if(img.src) img.src = img.src
+          .replace(/img\/(.*?)\.(jpg|jpeg|png)(\?|$)/i, 'img/webp-optimized/$1.webp$3');
+        if(img.dataset.src) img.dataset.src = img.dataset.src
+          .replace(/img\/(.*?)\.(jpg|jpeg|png)(\?|$)/i, 'img/webp-optimized/$1.webp$3');
+      });
+    });
+  })();
+</script>
+</head>
+<body>
+
+<!-- SVG defs -->
+<svg style="display:none"><defs>
+  <symbol id="ico-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></symbol>
+  <symbol id="ico-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
+  <symbol id="ico-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+  <symbol id="ico-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+  <symbol id="ico-arrow-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="ico-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M18 6L6 18M6 6l12 12"/></symbol>
+</defs></svg>
+
+<!-- ══ BACKDROP + NAV MENU ══ -->
+<div class="nav-menu-backdrop fixed inset-0 z-[185] bg-black/[.72] backdrop-blur-[3px] opacity-0 pointer-events-none transition-opacity duration-[450ms]" id="nav-backdrop"></div>
+<nav class="nav-menu fixed top-0 right-0 bottom-0 z-[190] w-[min(420px,100vw)] bg-[#0a0907] transition-transform duration-[450ms] ease-[cubic-bezier(.77,0,.18,1)] flex flex-col overflow-hidden" id="nav-menu">
+  <div class="nav-menu-deco absolute right-[-10px] bottom-[60px] font-rye text-[9rem] text-[rgba(191,124,26,.04)] leading-none pointer-events-none z-0 select-none">PB</div>
+  <div class="relative z-[2] flex items-center justify-between px-9 pt-7">
+    <img src="img/logo.png" alt="Proposer Barber" width="160" height="40" loading="eager" decoding="async" class="h-10 w-auto opacity-85" onerror="this.style.display='none'"/>
+  </div>
+  <div class="nav-menu-links relative z-[2] flex-1 flex flex-col justify-center px-9">
+    <a href="#hero" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden first:border-t first:border-[rgba(191,124,26,.06)]"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">01</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Inicio</span></a>
+    <a href="#about" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">02</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Nosotros</span></a>
+    <a href="#services" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">03</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Servicios</span></a>
+    <a href="#portfolio" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">04</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Galería</span></a>
+    <a href="#team" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">05</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Equipo</span></a>
+    <a href="#location" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">06</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Ubicación</span></a>
+    <a href="#contact" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">07</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Contacto</span></a>
+  </div>
+  <div class="relative z-[2] px-9 pt-6 pb-8 border-t border-[rgba(191,124,26,.1)]">
+    <a href="https://wa.me/18098786115" target="_blank" rel="noopener" class="flex items-center justify-center gap-[10px] w-full py-[14px] bg-[rgba(37,211,102,.08)] border border-[rgba(37,211,102,.28)] text-[rgba(37,211,102,.88)] font-rally text-[.7rem] font-bold tracking-[.14em] uppercase no-underline transition-all duration-[250ms] mb-[18px] hover:bg-[rgba(37,211,102,.16)] hover:border-[rgba(37,211,102,.5)] hover:text-[#25d366]">
+      <svg width="15" height="15"><use href="#ico-wa"/></svg>Quiero una web como esta
+    </a>
+    <div class="flex items-center gap-2">
+      <span class="font-rally text-[.56rem] text-[rgba(191,124,26,.35)] tracking-[.12em] uppercase mr-1">Síguenos</span>
+      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-fb"/></svg></a>
+      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-ig"/></svg></a>
+      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="12" height="12"><use href="#ico-yt"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HEADER ══ -->
+<header class="fixed top-0 left-0 right-0 z-[200] h-[70px] flex items-center justify-between px-[4%] bg-transparent pointer-events-none transition-[background] duration-300" id="site-header">
+  <div class="pointer-events-auto"></div>
+  <div class="flex items-center gap-[14px] pointer-events-auto">
+    <span class="text-[rgba(240,235,225,.88)] cursor-pointer transition-colors duration-[180ms] flex items-center hover:text-gold" onclick="openMapModal()">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+    <circle cx="12" cy="9" r="2.5"/>
+  </svg>
+</span>
+<span class="text-[rgba(240,235,225,.88)] cursor-pointer transition-colors duration-[180ms] flex items-center hover:text-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+    <line x1="8" y1="14" x2="8" y2="14" stroke-linecap="round" stroke-width="2"/>
+    <line x1="12" y1="14" x2="12" y2="14" stroke-linecap="round" stroke-width="2"/>
+    <line x1="16" y1="14" x2="16" y2="14" stroke-linecap="round" stroke-width="2"/>
+  </svg>
+</span>
+    <div class="hamburger flex flex-col gap-[5px] cursor-pointer py-0.5 pointer-events-auto" id="hamburger-btn" aria-expanded="false"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- ══ HERO SECTION══ -->
+<section class="hero relative w-full h-screen min-h-[580px] overflow-hidden bg-[#0a0908]" id="hero">
+  <!-- Capas de fondo -->
+  <div class="absolute inset-0 z-[3] pointer-events-none bg-[radial-gradient(ellipse_100%_90%_at_50%_50%,transparent_38%,rgba(5,4,3,.6)_100%)]"></div>
+  
+  <!-- Slides de imágenes -->
+  <div class="hero-slides absolute inset-0 z-[1]" id="hero-slides">
+    <div class="hero-slide active absolute inset-0"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1400&q=85" alt="Barbero" width="1400" height="900" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+<div class="hero-slide absolute inset-0"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1400&q=85" alt="Barbero experto" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+<div class="hero-slide absolute inset-0"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1400&q=85" alt="Barbería" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+<div class="hero-slide absolute inset-0"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1400&q=85" alt="Estilismo" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+  </div>
+  
+  <!-- Video animado (inicialmente oculto) -->
+  <div class="hero-video absolute inset-0 z-[2] hidden" id="hero-video">
+    <img src="img/video-hero.webp" alt="Video animado" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover" id="animated-video">
+  </div>
+  
+  <!-- Logo -->
+  <div class="absolute top-[22px] left-[4%] z-[10]"><img src="img/logo.png" alt="Proposer-Barber" width="160" height="78" loading="eager" decoding="async" class="h-[clamp(56px,8vw,78px)] w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,.6)]" onerror="this.style.display='none'"/></div>
+  
+  <!-- Elementos decorativos SVG reutilizados -->
+  <svg class="absolute top-[28px] right-[7%] z-[6] w-[80px] h-[64px] pointer-events-none" viewBox="0 0 90 70" fill="none">
+    <path d="M10 55 Q25 5 75 15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" opacity=".55"/>
+    <path d="M32 62 Q50 40 80 42" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".35"/>
+    <circle cx="82" cy="13" r="1.4" fill="white" opacity=".45"/>
+  </svg>
+  
+  <!-- Dots de navegación -->
+  <div class="absolute right-[18px] top-1/2 -translate-y-1/2 z-[10] flex flex-col items-center gap-2" id="slide-dots">
+    <div class="slide-dot w-[7px] h-[7px] rounded-full bg-[rgba(130,115,100,.4)] border border-[rgba(180,160,130,.25)] transition-all duration-300 cursor-pointer active"></div>
+    <div class="slide-dot w-[7px] h-[7px] rounded-full bg-[rgba(130,115,100,.4)] border border-[rgba(180,160,130,.25)] transition-all duration-300 cursor-pointer"></div>
+    <div class="slide-dot w-[7px] h-[7px] rounded-full bg-[rgba(130,115,100,.4)] border border-[rgba(180,160,130,.25)] transition-all duration-300 cursor-pointer"></div>
+    <div class="slide-dot w-[7px] h-[7px] rounded-full bg-[rgba(130,115,100,.4)] border border-[rgba(180,160,130,.25)] transition-all duration-300 cursor-pointer"></div>
+  </div>
+  
+  <!-- Barra de progreso -->
+  <div class="absolute bottom-0 left-0 right-0 z-[10] h-[2px] bg-white/[.08]">
+    <div class="h-full bg-gradient-to-r from-gold-dk to-gold w-0" id="progress-bar"></div>
+  </div>
+  
+  <!-- Contenido principal -->
+  <div class="hero-content absolute top-0 left-0 w-[52%] h-full z-[5] flex flex-col justify-center pt-[70px] pl-[5%]">
+    <!-- SVG decorativo reutilizado -->
+    <svg class="block mb-1 w-[60px] h-[34px]" viewBox="0 0 80 40" fill="none">
+      <path d="M8 30 C10 18,20 8,32 12 C38 14,40 20,36 24 C30 30,20 26,22 18 C24 12,34 10,44 14 C56 19,64 12,70 6" stroke="#bf7c1a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M6 32 C4 35,6 38,10 36" stroke="#bf7c1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    
+    <!-- Puntos decorativos -->
+    <div class="flex gap-[5px] items-center mb-1.5">
+      <span class="w-[3px] h-[3px] rounded-full bg-white/[.38] block"></span>
+      <span class="w-[3px] h-[3px] rounded-full bg-white/[.38] block"></span>
+      <span class="w-[3px] h-[3px] rounded-full bg-white/[.38] block"></span>
+    </div>
+    
+    <!-- Título traducido -->
+    <h1 class="font-rye leading-[1.02] tracking-[.01em]">
+      <span class="block text-[#f0ece0] text-[clamp(2rem,5.5vw,4.6rem)] [text-shadow:3px_3px_0_rgba(0,0,0,.75)]">TU CABELLO</span>
+      <span class="line-gold block text-[clamp(2rem,5.5vw,4.6rem)]">REQUIERE</span>
+      <span class="line-gold block text-[clamp(2rem,5.5vw,4.6rem)]">MAESTRÍA.</span>
+    </h1>
+    
+    <!-- Botones -->
+    <div class="hero-buttons flex items-center gap-[18px] mt-[clamp(18px,3vh,30px)]">
+      <button class="font-rally font-semibold text-[clamp(.58rem,.9vw,.72rem)] tracking-[.14em] uppercase text-white bg-transparent border border-white/70 px-[clamp(14px,2vw,22px)] py-[clamp(8px,1.2vh,11px)] cursor-pointer transition-all duration-200 whitespace-nowrap hover:bg-white/[.09] hover:border-white" onclick="smoothTo('contact')">CONTACTO</button>
+      <button class="flex items-center gap-[10px] cursor-pointer bg-none border-none p-0" id="play-video-btn">
+        <div class="w-[clamp(34px,4vw,42px)] h-[clamp(34px,4vw,42px)] rounded-full bg-gold flex items-center justify-center flex-shrink-0 shadow-[0_0_0_4px_rgba(191,124,26,.22)] transition-all duration-200 hover:bg-gold-lt hover:shadow-[0_0_0_6px_rgba(191,124,26,.28)]">
+          <div class="w-0 h-0 border-y-[6px] border-y-transparent border-l-[11px] border-l-[#0a0908] ml-0.5"></div>
+        </div>
+        <span class="font-rally font-normal text-[clamp(.6rem,.85vw,.78rem)] tracking-[.1em] uppercase text-white">REPRODUCIR VIDEO</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<!-- ══ ABOUT ══ -->
+<section class="bg-[#0d0c0a] py-[90px] px-[6%] relative overflow-hidden" id="about">
+  <div class="absolute inset-0 pointer-events-none z-0 opacity-[.07]" style="background-image:var(--grunge);background-size:300px;"></div>
+  <div class="relative z-10 max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
+
+    <div class="relative pt-6 pl-6 self-stretch flex flex-col justify-center max-w-[420px] mx-auto md:mx-0 g-left">
+      <div class="absolute top-0 left-0 w-[calc(100%-24px)] h-[calc(100%-16px)] border border-gold z-0 pointer-events-none"></div>
+      <div class="relative z-10 overflow-hidden">
+        <img src="img/guiño.png" alt="Barbero experto en Proposer Barber" width="420" height="520" loading="lazy" decoding="async" class="block w-full object-cover object-top shadow-2xl grayscale contrast-[1.08] brightness-[0.88] min-h-[300px] max-h-[440px]" onerror="this.src='https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=700&q=80'"/>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-center g-right relative">
+      <span class="font-rally text-[.68rem] tracking-[.28em] uppercase text-[#bf7c1a] mb-4 flex items-center gap-3">
+        <span class="inline-block w-7 h-px bg-[#bf7c1a]"></span>San Cortez
+      </span>
+
+      <span class="font-rye text-[clamp(5rem,12vw,8rem)] leading-none text-[rgba(191,124,26,.05)] absolute top-[-20px] left-[-10px] select-none pointer-events-none uppercase">Arte</span>
+
+      <h2 class="font-rye font-extrabold uppercase text-[clamp(1.8rem,3.5vw,2.5rem)] leading-[1.1] text-twht relative z-10">EL MEJOR CORTE<br>
+        <em class="font-rye gold-text-gradient not-italic text-[clamp(2rem,4vw,2.9rem)] leading-[1.3]">DE TU VIDA</em>
+      </h2>
+
+      <div class="flex items-center gap-3 my-5">
+        <span class="flex-1 h-px bg-[rgba(191,124,26,.15)]"></span>
+        <svg width="20" height="16" viewBox="0 0 28 22" fill="none"><path d="M4 18 L22 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><path d="M24 18 L6 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="11" r="1.8" fill="#c9901d"/><path d="M11 19 L14 22 L17 19" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3 L14 1 L18 3" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="flex-1 h-px bg-[rgba(191,124,26,.15)]"></span>
+      </div>
+
+      <p class="font-rally text-[0.82rem] leading-[1.85] text-white/50 w-full mb-4">
+  En <strong class="text-white/70">Proposer Barber</strong> no hacemos cortes — hacemos transformaciones. Cada caballero que entra sale con más confianza, mejor presencia y un estilo que habla antes de que abres la boca.
+</p>
+<p class="font-rally text-[0.82rem] leading-[1.85] text-white/50 w-full mb-8">
+  Sin esperas eternas, sin resultados mediocres. Solo técnica de alto nivel, atención personalizada y el ambiente que mereces. Tu próxima visita te está esperando en — <em class="word-gold not-italic">Av. del Hierro 47, San Cortez.</em>
+</p>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <button
+          onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})"
+          class="font-rally font-semibold text-[0.72rem] tracking-[.16em] uppercase text-[#0a0908] bg-[#bf7c1a] border border-[#bf7c1a] px-8 py-3 cursor-pointer transition-all duration-200 hover:bg-[#d4911f] hover:border-[#d4911f] hover:shadow-[0_0_22px_rgba(191,124,26,.45)]">
+          VER SERVICIOS Y PRECIOS →
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<style>
+.services-overline::after{content:'';flex:1;height:1px;background:linear-gradient(to right,rgba(191,124,26,.5),transparent);}
+.services-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,#0a0908 0%,rgba(10,9,8,.94) 45%,rgba(10,9,8,.72) 70%,rgba(10,9,8,.5) 100%);}
+.services-big-title em{display:block;-webkit-text-stroke:1px rgba(191,124,26,.55);color:transparent;font-style:normal;}
+.services-cta:hover{gap:20px;} .services-cta:hover { gap: 20px;} .service-item{position:relative;overflow:hidden;}
+.service-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold,#bf7c1a);transform:scaleY(0);transform-origin:bottom;transition:transform .4s ease;}
+.service-item.active::before{transform:scaleY(1);}
+.service-item.active .service-num{color:rgba(191,124,26,.3);}
+.service-item.active .service-name{color:var(--gold,#bf7c1a);}
+.service-item.active .service-price{color:#fff;}
+
+.service-progress{position:absolute;bottom:0;left:0;height:1px;width:0%;background:linear-gradient(to right,var(--gold,#bf7c1a),transparent);}
+</style>
+
+<section class="relative overflow-hidden bg-[#0a0908]" id="services">
+  <div class="services-bg-img absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1400&q=85" alt="" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale brightness-[.15] contrast-[1.2]"/>
+  </div>
+  <div class="services-inner relative z-[2] max-w-[1200px] mx-auto py-[120px] px-[6%] grid grid-cols-2 gap-[80px] items-center">
+    <div class="nnum top-20">01</div>
+    <div class="services-left">
+      <h2 class="services-big-title font-rye text-[clamp(1.8rem,5vw,3.3rem)] leading-[1.1] text-twht mb-6 g-up">
+  THE ART OF THE
+  <em class="block text-transparent leading-[1.3] [font-style:normal] [text-shadow:none] [-webkit-text-stroke:1px_rgba(191,124,26,0.55)]">
+    PERFECT CUT.
+  </em>
+</h2>
+      <p class="font-rally text-[.85rem] leading-[1.9] text-tgry max-w-[400px] mb-[38px] g-up">Desde degradados de precisión hasta el arte del arreglo de barba — nuestro oficio se construye sobre disciplina, técnica y años de experiencia refinada. Esto es la barbería elevada a su máxima expresión.</p>
+
+      <!-- active service detail card -->
+      <div id="svc-detail" class="border border-[rgba(191,124,26,.18)] bg-[rgba(191,124,26,.04)] rounded-sm px-5 py-4 mb-[38px] min-h-[80px] transition-all duration-500">
+        <p id="svc-detail-name" class="font-rally font-extrabold text-[.7rem] tracking-[.2em] uppercase text-[#bf7c1a] mb-1">—</p>
+        <p id="svc-detail-desc" class="font-rally text-[.82rem] text-[#aaa] leading-[1.7]">Pasa el cursor o espera — cada servicio habla por sí solo.</p>
+        <p id="svc-detail-price" class="font-rye text-[1.4rem] text-[#bf7c1a] mt-2">—</p>
+      </div>
+      <button class="services-cta inline-flex items-center gap-[14px] font-rally text-[.68rem] font-bold tracking-[.2em] uppercase text-gold cursor-pointer bg-none border-none p-0 transition-[gap] duration-300 g-up" onclick="smoothTo('contact')">Reserva tu Cita<svg width="18" height="18"><use href="#ico-arrow-r"/></svg></button>
+    </div>
+
+    <div class="flex flex-col" id="svc-list">
+
+      <div class="service-item flex items-center border-b border-t border-[rgba(191,124,26,.1)] py-[22px] gap-7 cursor-default g-right"
+     data-name="Corte de Precisión" data-desc="Cortes clásicos, degradados modernos y skin fades diseñados a medida para la forma de tu rostro y estilo de vida." data-price="$35 – $55" data-duration="45 min">
+  <div class="service-num font-rye text-[clamp(1.8rem,3vw,2.6rem)] text-[rgba(191,124,26,.12)] leading-none flex-shrink-0 w-14 text-right transition-colors duration-300">01</div>
+  <div class="flex flex-col flex-1">
+    <div class="flex items-baseline justify-between gap-4">
+      <div class="service-name font-rally font-extrabold text-[.9rem] tracking-[.14em] uppercase text-twht mb-1 transition-colors duration-300">Corte de Precisión</div>
+      <div class="service-price font-rally text-[.72rem] font-bold text-[rgba(191,124,26,.35)] transition-colors duration-300 shrink-0">$35 – $55</div>
+    </div>
+    <div class="font-rally text-[.74rem] text-tgry leading-[1.5]">Cortes clásicos, degradados modernos, diseñados a medida para la forma de tu rostro.</div>
+  </div>
+  <div class="service-progress"></div>
+</div>
+
+<div class="service-item flex items-center border-b border-[rgba(191,124,26,.1)] py-[22px] gap-7 cursor-default g-right"
+     data-name="Afeitado con Toalla Caliente" data-desc="Aceite pre-afeitado, toallas de linaza calientes, navaja recta y bálsamo final. El afeitado más apurado de tu vida." data-price="$45 – $65" data-duration="30 min">
+  <div class="service-num font-rye text-[clamp(1.8rem,3vw,2.6rem)] text-[rgba(191,124,26,.12)] leading-none flex-shrink-0 w-14 text-right transition-colors duration-300">02</div>
+  <div class="flex flex-col flex-1">
+    <div class="flex items-baseline justify-between gap-4">
+      <div class="service-name font-rally font-extrabold text-[.9rem] tracking-[.14em] uppercase text-twht mb-1 transition-colors duration-300">Afeitado con Toalla Caliente</div>
+      <div class="service-price font-rally text-[.72rem] font-bold text-[rgba(191,124,26,.35)] transition-colors duration-300 shrink-0">$45 – $65</div>
+    </div>
+    <div class="font-rally text-[.74rem] text-tgry leading-[1.5]">Lujo con navaja — el afeitado más apurado y suave que hayas experimentado.</div>
+  </div>
+  <div class="service-progress"></div>
+</div>
+
+<div class="service-item flex items-center border-b border-[rgba(191,124,26,.1)] py-[22px] gap-7 cursor-default g-right"
+     data-name="Esculpido de Barba" data-desc="Perfilados precisos, modelado natural y esculpido detallado que enmarca tu mandíbula e impone presencia." data-price="$25 – $40" data-duration="25 min">
+  <div class="service-num font-rye text-[clamp(1.8rem,3vw,2.6rem)] text-[rgba(191,124,26,.12)] leading-none flex-shrink-0 w-14 text-right transition-colors duration-300">03</div>
+  <div class="flex flex-col flex-1">
+    <div class="flex items-baseline justify-between gap-4">
+      <div class="service-name font-rally font-extrabold text-[.9rem] tracking-[.14em] uppercase text-twht mb-1 transition-colors duration-300">Esculpido de Barba</div>
+      <div class="service-price font-rally text-[.72rem] font-bold text-[rgba(191,124,26,.35)] transition-colors duration-300 shrink-0">$25 – $40</div>
+    </div>
+    <div class="font-rally text-[.74rem] text-tgry leading-[1.5]">Trabajo de detalles, perfilados y esculpido que enmarca tu rostro con autoridad.</div>
+  </div>
+  <div class="service-progress"></div>
+</div>
+
+<div class="service-item flex items-center border-b border-[rgba(191,124,26,.1)] py-[22px] gap-7 cursor-default g-right"
+     data-name="Peinado Profesional" data-desc="Pompadours, texturizados y peinados hacia atrás — acabados con productos premium seleccionados para tu tipo de cabello." data-price="$20 – $35" data-duration="20 min">
+  <div class="service-num font-rye text-[clamp(1.8rem,3vw,2.6rem)] text-[rgba(191,124,26,.12)] leading-none flex-shrink-0 w-14 text-right transition-colors duration-300">04</div>
+  <div class="flex flex-col flex-1">
+    <div class="flex items-baseline justify-between gap-4">
+      <div class="service-name font-rally font-extrabold text-[.9rem] tracking-[.14em] uppercase text-twht mb-1 transition-colors duration-300">Peinado Profesional</div>
+      <div class="service-price font-rally text-[.72rem] font-bold text-[rgba(191,124,26,.35)] transition-colors duration-300 shrink-0">$20 – $35</div>
+    </div>
+    <div class="font-rally text-[.74rem] text-tgry leading-[1.5]">Pompadours, texturizados y looks modernos sellados con productos premium.</div>
+  </div>
+  <div class="service-progress"></div>
+</div>
+
+<div class="service-item flex items-center border-b border-[rgba(191,124,26,.1)] py-[22px] gap-7 cursor-default g-right"
+     data-name="Curso Online de Barbería" data-desc="12 módulos estructurados, sesiones de preguntas en vivo y certificación reconocida — aprende el oficio desde cualquier lugar del mundo." data-price="$299" data-duration="A tu ritmo">
+  <div class="service-num font-rye text-[clamp(1.8rem,3vw,2.6rem)] text-[rgba(191,124,26,.12)] leading-none flex-shrink-0 w-14 text-right transition-colors duration-300">05</div>
+  <div class="flex flex-col flex-1">
+    <div class="flex items-baseline justify-between gap-4">
+      <div class="service-name font-rally font-extrabold text-[.9rem] tracking-[.14em] uppercase text-twht mb-1 transition-colors duration-300">Curso Online de Barbería</div>
+      <div class="service-price font-rally text-[.72rem] font-bold text-[rgba(191,124,26,.35)] transition-colors duration-300 shrink-0">$299</div>
+    </div>
+    <div class="font-rally text-[.74rem] text-tgry leading-[1.5]">Aprende barbería profesional desde casa. Certifícate. Lanza tu carrera.</div>
+  </div>
+  <div class="service-progress"></div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const INTERVAL    = 6200;   // ms per service
+  const items       = Array.from(document.querySelectorAll('#svc-list .service-item'));
+  const detailName  = document.getElementById('svc-detail-name');
+  const detailDesc  = document.getElementById('svc-detail-desc');
+  const detailPrice = document.getElementById('svc-detail-price');
+
+  let current   = -1;
+  let timer     = null;
+  let progTimer = null;
+  let paused    = false;
+
+  function setActive(index) {
+    // clear previous
+    items.forEach((el, i) => {
+      el.classList.remove('active');
+      el.querySelector('.service-progress').style.transition = 'none';
+      el.querySelector('.service-progress').style.width = '0%';
+    });
+
+    current = index;
+    const el   = items[current];
+    const prog = el.querySelector('.service-progress');
+    const d    = el.dataset;
+
+    el.classList.add('active');
+
+    // animate detail card with brief fade
+    detailName.style.opacity  = '0';
+    detailDesc.style.opacity  = '0';
+    detailPrice.style.opacity = '0';
+
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        detailName.textContent  = d.name;
+        detailDesc.textContent  = d.desc;
+        detailPrice.textContent = d.price + (d.duration ? '  ·  ' + d.duration : '');
+        ['detailName','detailDesc','detailPrice'].forEach(k =>
+          eval(k).style.transition = 'opacity .35s ease'
+        );
+        detailName.style.opacity  = '1';
+        detailDesc.style.opacity  = '1';
+        detailPrice.style.opacity = '1';
+      }, 80);
+    });
+
+    // progress bar
+    requestAnimationFrame(() => {
+      prog.style.transition = `width ${INTERVAL}ms linear`;
+      prog.style.width      = '100%';
+    });
+  }
+
+  function next() {
+    if (!paused) setActive((current + 1) % items.length);
+  }
+
+  function startCycle() {
+    clearInterval(timer);
+    timer = setInterval(next, INTERVAL);
+    setActive(0);
+  }
+
+  // hover: pause cycle, highlight hovered item
+  items.forEach((el, i) => {
+    el.addEventListener('mouseenter', () => {
+      paused = true;
+      clearInterval(timer);
+      // stop current progress
+      const cp = items[current]?.querySelector('.service-progress');
+      if (cp) { cp.style.transition = 'none'; cp.style.width = cp.getBoundingClientRect().width + 'px'; }
+      setActive(i);
+    });
+    el.addEventListener('mouseleave', () => {
+      paused = false;
+      // resume from this item
+      clearInterval(timer);
+      timer = setInterval(next, INTERVAL);
+    });
+  });// pause when section not in viewport (perf)
+  const observer = new IntersectionObserver(entries => { if (entries[0].isIntersecting) startCycle(); else clearInterval(timer); }, { threshold: 0.2 }); observer.observe(document.getElementById('services')); })(); </script>
+
+<!--==== REVIEWS ====-->
+<section class="bg-[#0d0c0a] py-[100px] overflow-hidden relative" id="reviews">
+  <div class="absolute inset-0 pointer-events-none opacity-[.045]" style="background-image:var(--grunge);background-size:280px;"></div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-[6%]">
+
+    <div class="flex items-center gap-3 mb-3">
+      <span class="font-rally text-[.65rem] tracking-[.25em] uppercase text-gold">Client Reviews</span>
+      <span class="flex-1 h-px bg-gradient-to-r from-[rgba(191,124,26,.5)] to-transparent"></span>
+    </div>
+
+    <div class="flex items-end justify-between mb-[52px] gap-6 flex-wrap">
+      <div class="nnum">02</div>
+      <h2 class="font-rye text-[clamp(2rem,5vw,3.8rem)] leading-[.95] text-twht g-up">
+        QUE OPINAN<br/>
+        <em class="block not-italic [-webkit-text-stroke:1px_rgba(191,124,26,.5)] text-transparent mt-1">DE NOSOTROS.</em>
+      </h2>
+      <div class="flex items-center gap-5 g-up">
+        <div class="text-right">
+          <div class="font-rye text-[2.4rem] text-gold leading-none">4.9</div>
+          <div class="rv-stars mt-[6px] justify-end">
+            <div class="rv-star"></div><div class="rv-star"></div><div class="rv-star"></div><div class="rv-star"></div><div class="rv-star"></div>
+          </div>
+          <div class="font-rally text-[.5rem] tracking-[.14em] uppercase text-tgry mt-1">+240 reseñas verificadas</div>
+        </div>
+        <div class="flex gap-[10px]">
+          <button id="rv-prev" class="w-10 h-10 border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.5)] transition-all duration-200 hover:border-gold hover:text-gold">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2L3 7l6 5"/></svg>
+          </button>
+          <button id="rv-next" class="w-10 h-10 border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.5)] transition-all duration-200 hover:border-gold hover:text-gold">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2l6 5-6 5"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper rv-track" id="rv-swiper">
+      <div class="swiper-wrapper" id="rv-wrapper"></div>
+      <div class="swiper-scrollbar rv-scrollbar"></div>
+    </div>
+    <div class="rv-pagination swiper-pagination relative mt-[20px] flex justify-center gap-[6px]" id="rv-pagination"></div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  const swiper = new Swiper('#rv-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    grabCursor: true,
+    loop: true,
+    speed: 700,
+    autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
+    scrollbar: { el: '.rv-scrollbar', draggable: true },
+    navigation: { prevEl: '#rv-prev', nextEl: '#rv-next' },
+    pagination: { el: '#rv-pagination', clickable: true },
+    breakpoints: {
+      0:   { spaceBetween: 14 },
+      768: { spaceBetween: 20 },
+    }
+  });
+})();
+</script>
+
+<!-- ══ GALERÍA ══ -->
+<section class="bg-[#0d0c0a] py-[110px] px-[6%] relative overflow-hidden" id="portfolio">
+  <div class="absolute inset-0 pointer-events-none z-0 opacity-[.07]" style="background-image:var(--grunge);background-size:300px;"></div>
+  <div class="relative z-[1] max-w-[1140px] mx-auto">
+    <div class="portfolio-header mb-[52px] lg:text-center">
+  <!-- Versión mobile: flex con número a la derecha -->
+  <div class="flex lg:hidden items-start justify-between gap-5">
+    <div class="flex items-center gap-[10px] flex-wrap">
+      <div class="nnum">03</div>
+      <svg width="26" height="20" viewBox="0 0 28 22" fill="none" class="shrink-0"><path d="M4 18 L22 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><path d="M24 18 L6 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="11" r="1.8" fill="#c9901d"/><path d="M11 19 L14 22 L17 19" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3 L14 1 L18 3" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2 class="font-rye font-extrabold text-[clamp(1.5rem,3vw,2.1rem)] tracking-[.05em] uppercase text-twht leading-none">ESTILO <span class="word-gold">PRECISO</span></h2>
+    </div>
+    <div class="nnum text-[#c9901d] font-rally font-bold text-[1.2rem] leading-none">03</div>
+  </div>
+  
+  <!-- Versión desktop: exactamente tu código original traducido -->
+  <div class="hidden lg:block">
+    <div class="inline-flex items-center gap-[10px] mb-1.5 badge-row">
+      <svg width="26" height="20" viewBox="0 0 28 22" fill="none"><path d="M4 18 L22 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><path d="M24 18 L6 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="11" r="1.8" fill="#c9901d"/><path d="M11 19 L14 22 L17 19" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3 L14 1 L18 3" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2 class="font-rally font-extrabold text-[clamp(1.5rem,3vw,2.1rem)] tracking-[.05em] uppercase text-twht leading-none">ESTILO <span class="word-gold">PRECISO</span></h2>
+    </div>
+    <div class="gold-rule-center w-11 h-0.5 bg-gold mx-auto mt-3"></div>
+  </div>
+  
+  <!-- Subtítulo Master Barbers solo en mobile (traducido) -->
+  <p class="lg:hidden text-[#c9901d] text-[.65rem] tracking-[.28em] uppercase font-semibold mt-3 flex items-center gap-2"><span class="inline-block w-6 h-px bg-[#c9901d] opacity-70"></span>Maestros Barbero</p>
+  
+  <!-- Texto descriptivo traducido -->
+  <p class="font-rally text-[.8rem] text-tgry leading-[1.7] lg:text-center lg:mx-auto lg:max-w-[480px] mt-[14px]">Una muestra de cortes de precisión, degradados magistrales y arreglos impecables — cada foto es un testimonio de nuestro oficio.</p>
+</div>
+
+    <div class="pf-filters-track mb-8">
+      <div class="portfolio-filters flex gap-1.5 flex-nowrap sm:justify-center">
+        <button class="filter-btn active font-rally text-[.65rem] font-bold tracking-[.18em] uppercase text-tgry bg-transparent border border-[#2a2724] px-[18px] py-2 cursor-pointer transition-all duration-[250ms] whitespace-nowrap flex-shrink-0" data-filter="all">Todo</button>
+        <button class="filter-btn font-rally text-[.65rem] font-bold tracking-[.18em] uppercase text-tgry bg-transparent border border-[#2a2724] px-[18px] py-2 cursor-pointer transition-all duration-[250ms] whitespace-nowrap flex-shrink-0" data-filter="haircut">Cortes</button>
+        <button class="filter-btn font-rally text-[.65rem] font-bold tracking-[.18em] uppercase text-tgry bg-transparent border border-[#2a2724] px-[18px] py-2 cursor-pointer transition-all duration-[250ms] whitespace-nowrap flex-shrink-0" data-filter="shaving">Afeitado</button>
+        <button class="filter-btn font-rally text-[.65rem] font-bold tracking-[.18em] uppercase text-tgry bg-transparent border border-[#2a2724] px-[18px] py-2 cursor-pointer transition-all duration-[250ms] whitespace-nowrap flex-shrink-0" data-filter="styling">Diseño capilar</button>
+        <button class="filter-btn font-rally text-[.65rem] font-bold tracking-[.18em] uppercase text-tgry bg-transparent border border-[#2a2724] px-[18px] py-2 cursor-pointer transition-all duration-[250ms] whitespace-nowrap flex-shrink-0" data-filter="trimming">Barba</button>
+      </div>
+    </div>
+
+    <div class="gallery-grid grid grid-cols-3 gap-1.5" id="gallery-grid"></div>
+
+    <div class="see-more-wrap text-center mt-9">
+      <button id="load-more-btn" class="load-more-btn font-rally font-bold text-[.72rem] tracking-[.18em] uppercase relative overflow-hidden" style="color:#c9901d;background:transparent;border:1px solid rgba(191,124,26,.5);padding:13px 36px;cursor:pointer;display:inline-block;transition:color .28s;letter-spacing:.18em;"><span class="relative z-[1]" style="transition:color .28s;">Ver más</span></button>
+    </div>
+  </div>
+</section>
+
+<div class="pf-lightbox" id="pf-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="pf-lb-backdrop"></div>
+  <div class="pf-lb-progress" id="pf-lb-progress-bar"></div>
+  <button class="pf-lb-close" id="pf-lb-close" aria-label="Close"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <button class="pf-lb-arrow pf-lb-prev" id="pf-lb-prev" aria-label="Previous"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="pf-lb-stage" id="pf-lb-stage"><div class="pf-lb-img-wrap" id="pf-lb-img-wrap"><img src="" alt="" id="pf-lb-img" draggable="false"/></div></div>
+  <button class="pf-lb-arrow pf-lb-next" id="pf-lb-next" aria-label="Next"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M1 1L9 9L1 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="pf-lb-footer">
+    <div class="pf-lb-meta"><span class="pf-lb-cat" id="pf-lb-cat"></span><span class="pf-lb-counter" id="pf-lb-counter"></span></div>
+    <div class="pf-lb-controls">
+      <button class="pf-lb-zoom-btn" id="pf-lb-zoom-in" title="Zoom in"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><line x1="10.5" y1="10.5" x2="15" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="6.5" y1="4" x2="6.5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="6.5" x2="9" y2="6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <button class="pf-lb-zoom-btn" id="pf-lb-zoom-out" title="Zoom out"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><line x1="10.5" y1="10.5" x2="15" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="6.5" x2="9" y2="6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="pf-lb-divider"></div>
+      <button class="pf-lb-play-btn" id="pf-lb-autoplay" title="Autoplay"><svg class="pf-lb-play-icon" width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M1 1L13 8L1 15V1Z" fill="currentColor"/></svg><svg class="pf-lb-pause-icon" width="14" height="16" viewBox="0 0 14 16" fill="none" style="display:none"><rect x="1" y="1" width="4" height="14" rx="1" fill="currentColor"/><rect x="9" y="1" width="4" height="14" rx="1" fill="currentColor"/></svg></button>
+      <div class="pf-lb-speed-wrap"><button class="pf-lb-speed-btn" id="pf-lb-speed-btn">1×</button><div class="pf-lb-speed-menu" id="pf-lb-speed-menu"><button class="pf-lb-speed-opt" data-speed="6000">0.5×</button><button class="pf-lb-speed-opt active" data-speed="3000">1×</button><button class="pf-lb-speed-opt" data-speed="1500">2×</button><button class="pf-lb-speed-opt" data-speed="800">3×</button></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VIDEOS ══ -->
+<section class="bg-[#0e0d0b] py-[110px] px-[6%] relative overflow-hidden" id="videos-section">
+  <div class="absolute inset-0 pointer-events-none z-0 opacity-[.07]" style="background-image:var(--grunge);background-size:300px;"></div>
+
+  <div class="relative z-[1] max-w-[1100px] mx-auto">
+
+    <!-- HEADER -->
+    <div class="videos-header mb-[52px] lg:text-center">
+
+      <!-- Mobile -->
+      <div class="flex lg:hidden items-start justify-between gap-5">
+        <div class="videos-heading-block flex-1">
+          <p class="text-[#c9901d] text-[.65rem] tracking-[.28em] uppercase font-semibold mb-3 flex items-center gap-2">
+            <span class="inline-block w-6 h-px bg-[#c9901d] opacity-70"></span>Master Barbers
+          </p>
+          <div class="inline-flex items-center gap-[10px] mb-1">
+            <svg width="26" height="20" viewBox="0 0 28 22" fill="none"><path d="M4 18 L22 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><path d="M24 18 L6 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="11" r="1.8" fill="#c9901d"/><path d="M11 19 L14 22 L17 19" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3 L14 1 L18 3" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="nnum">04</div>
+            <h2 class="font-rye font-extrabold text-[clamp(1.5rem,3vw,2.1rem)] tracking-[.05em] uppercase text-twht leading-none m-0">EN <span class="word-gold">ACCIÓN</span></h2>
+          </div>
+          <p class="font-rally text-[.78rem] text-tgry leading-[1.7] mt-2.5 max-w-[400px]">Nuestros maestros barberos en acción — del corte base al degradado perfecto.</p>
+        </div>
+      </div>
+
+      <!-- Desktop -->
+      <div class="hidden lg:block">
+        <p class="text-[#c9901d] text-[.65rem] tracking-[.28em] uppercase font-semibold mb-3 flex items-center justify-center gap-2">
+          <span class="inline-block w-6 h-px bg-[#c9901d] opacity-70"></span>Master Barbers<span class="inline-block w-6 h-px bg-[#c9901d] opacity-70"></span>
+        </p>
+        <div class="inline-flex items-center gap-[10px] mb-1">
+          <svg width="26" height="20" viewBox="0 0 28 22" fill="none"><path d="M4 18 L22 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><path d="M24 18 L6 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="11" r="1.8" fill="#c9901d"/><path d="M11 19 L14 22 L17 19" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 3 L14 1 L18 3" stroke="#c9901d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h2 class="font-rye font-extrabold text-[clamp(1.5rem,3vw,2.1rem)] tracking-[.05em] uppercase text-twht leading-none m-0">EN <span class="word-gold">ACCIÓN</span></h2>
+        </div>
+        <div class="gold-rule-center w-11 h-0.5 bg-gold mx-auto mt-3"></div>
+        <p class="font-rally text-[.9rem] text-tgry leading-[1.8] max-w-[620px] mx-auto mt-[18px]">Observa a nuestros maestros barberos en acción — de cero a degradado en minutos. Cada video captura la precisión, técnica y arte que define nuestro oficio, dándote un asiento en primera fila a la transformación.</p>
+      </div>
+    </div>
+
+    <!-- PLAYER -->
+    <div class="vs-player-wrap relative w-full overflow-hidden mb-3 bg-black"
+         style="aspect-ratio:16/9;box-shadow:0 0 0 1px rgba(201,144,29,.1),0 28px 70px rgba(0,0,0,.7);">
+
+      <video id="vd-player" class="absolute inset-0 w-full h-full object-cover"
+             playsinline preload="none"></video>
+
+      <div class="absolute inset-0 pointer-events-none"
+           style="background:linear-gradient(to top,rgba(5,4,2,.65) 0%,transparent 45%,transparent 80%,rgba(5,4,2,.2) 100%);"></div>
+
+      <div id="vd-play-zone" class="absolute inset-0 flex items-center justify-center cursor-pointer z-10">
+        <div id="vd-play-btn" class="w-[62px] h-[62px] rounded-full flex items-center justify-center"
+             style="background:#c9901d;box-shadow:0 0 0 5px rgba(201,144,29,.25),0 0 28px rgba(201,144,29,.2);transition:opacity .25s,transform .25s;">
+          <svg id="vd-icon-play"  width="22" height="22" viewBox="0 0 24 24" fill="#0e0d0b"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="vd-icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="#0e0d0b" class="hidden"><path d="M6 19h4V5H6zm8-14v14h4V5z"/></svg>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 z-20 px-5 pb-5">
+        <div class="flex justify-end mb-2">
+          <button id="vd-mute" class="w-8 h-8 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all duration-200">
+            <svg id="vd-icon-sound" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <svg id="vd-icon-muted" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="hidden"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+          </button>
+        </div>
+        <div id="vd-progress-track" class="w-full h-[3px] cursor-pointer relative overflow-hidden"
+             style="background:rgba(255,255,255,.18);">
+          <div id="vd-progress-fill" class="h-full pointer-events-none"
+               style="width:0%;background:linear-gradient(90deg,#c9901d,#e0a830);transition:none;"></div>
+        </div>
+      </div>
+
+      <div id="vd-loader" class="absolute inset-0 flex items-center justify-center z-30 hidden">
+        <div class="w-8 h-8 rounded-full border-2 border-[#c9901d]/30 border-t-[#c9901d] animate-spin"></div>
+      </div>
+    </div>
+
+    <!-- THUMBNAILS — el wrapper queda vacío, video.js inyecta los slides -->
+    <div class="swiper vs-swiper cursor-grab active:cursor-grabbing">
+      <div class="swiper-wrapper" id="vs-wrapper"></div>
+      <div class="swiper-pagination vs-pagination mt-4"></div>
+    </div>
+
+    <!-- Mobile arrows -->
+    <div class="flex md:hidden justify-center gap-3 mt-5">
+      <button id="vd-prev-mob" class="vd-arrow-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button id="vd-next-mob" class="vd-arrow-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ TEAM ══ -->
+<section class="bg-[#111110] py-[80px] sm:py-[110px] px-4 sm:px-8 lg:px-[6%] relative overflow-hidden" id="team">
+  <div class="absolute inset-0 pointer-events-none z-0 opacity-[.08]" style="background-image:var(--grunge);background-size:300px;"></div>
+
+  <div class="relative z-[1] max-w-[1140px] mx-auto">
+
+<!-- Header -->
+<div class="team-header mb-12 sm:mb-16">
+  <div class="nnum">05</div>
+  <h2 class="font-rye text-[clamp(2rem,4vw,3.4rem)] text-[#f0ece4] leading-[1.05] mb-0 g-up">
+    NUESTROS<br/><em>4 MAESTROS</em>
+  </h2>
+  <div class="team-header-rule"></div>
+  <p class="font-rally text-[.83rem] text-[#8a8580] leading-[1.85] max-w-[440px] g-up">
+    Cuatro maestros barberos. Una obsesión: la perfección. Cada uno aporta un estilo propio y años de técnica refinada en cada corte.
+  </p>
+</div>
+
+    <!-- Grid — 1 col mobile / 2 col tablet / 4 col desktop -->
+    <div class="team-grid active-with-click">
+      <!-- Cards injected by JS -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Card template ── -->
+<template id="card-tpl">
+  <div class="team-col">
+    <article class="material-card {{theme}}">
+      <h2>
+        <span>{{name}}</span>
+        <strong><i class="fa-solid fa-scissors"></i>Master Barber</strong>
+      </h2>
+      <div class="mc-content">
+        <div class="img-container">
+          <img class="mc-img-responsive" src="{{img}}" alt="{{name}}" loading="lazy" decoding="async"/>
+          <div class="card-top-border"></div>
+        </div>
+        <div class="mc-description">{{desc}}</div>
+      </div>
+      <a class="mc-btn-action" role="button" aria-label="Toggle details" aria-expanded="false">
+        <span class="mc-toggle-icon" aria-hidden="true">
+          <span class="mc-toggle-icon__line mc-toggle-icon__line--top"></span>
+          <span class="mc-toggle-icon__line mc-toggle-icon__line--middle"></span>
+          <span class="mc-toggle-icon__line mc-toggle-icon__line--bottom"></span>
+        </span>
+      </a>
+      <div class="mc-footer">
+        <div class="stat-group">
+          <div class="stat-item">
+            <i class="fa-solid fa-clock"></i>
+            <span class="stat-value">{{yrs}}yr</span>
+            <span class="stat-label">Exp.</span>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-users"></i>
+            <span class="stat-value">{{clients}}</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-star"></i>
+            <span class="stat-value">{{rating}}</span>
+            <span class="stat-label">Rating</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</template>
+
+<!-- ══ UBICACION ══ -->
+<section class="bg-[#0a0908] py-[80px] sm:py-[110px] px-4 sm:px-8 lg:px-[6%] relative overflow-hidden" id="location">
+  <!-- Grunge texture -->
+  <div class="absolute inset-0 pointer-events-none z-0 opacity-[.07]"
+       style="background-image:var(--grunge,url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.75%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3CfeColorMatrix type=%27saturate%27 values=%270%27/%3E%3C/filter%3E%3Crect width=%27300%27 height=%27300%27 filter=%27url(%23n)%27 opacity=%271%27/%3E%3C/svg%3E'));background-size:300px;"></div>
+
+  <div class="relative z-[1] max-w-[1140px] mx-auto">
+
+    <!-- ── Header ── -->
+    <div class="location-header relative mb-[48px] sm:mb-[56px]">
+      <div class="loc-ghost-num">06</div>
+
+      <p class="location-overline font-rally text-[.6rem] font-bold tracking-[.3em] uppercase text-[#bf7c1a] mb-[14px]">
+  Dónde Encontrarnos
+</p>
+
+<h2 class="font-extrabold text-[clamp(1.6rem,3.2vw,2.4rem)] tracking-[.04em] uppercase text-[#f0ece4] leading-[1.05] mb-0 word-gold">
+  ESTAMOS EN <br><span class="word-gold">SAN CORTEZ</span>
+</h2>
+
+<div class="loc-header-rule"></div>
+
+<p class="font-rally text-[.82rem] text-[#8a8580] leading-[1.8] max-w-[440px]">
+  Pásate sin cita o reserva con antelación — estamos en el corazón de San Cortez, listos para brindarte la experiencia que mereces.
+</p>
+</div>
+
+<!-- ── Media: mapa + foto ── -->
+<div class="location-media-grid">
+
+  <!-- Mapa oscuro -->
+  <div class="location-map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-73.99609808459418!3d40.69053627933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sBrooklyn%20Bridge!5e0!3m2!1sen!2sus!4v1632000000000!5m2!1sen!2sus"
+      title="Ubicación"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <!-- Foto interior -->
+  <div class="location-photo-wrap">
+    <img src="img/barber-shop.png" alt="Interior de Proposer Barber en San Cortez" width="1000" height="667" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=85'"/>
+    <div class="photo-vignette"></div>
+    <div class="photo-corner-mark"></div>
+  </div>
+
+</div>
+
+<!-- ── Tarjetas de información ── -->
+<div class="location-info-grid">
+
+  <!-- Dirección -->
+  <div class="loc-info-card">
+    <div class="loc-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </div>
+    <div class="loc-title">Dirección</div>
+    <div class="loc-text">Av. del Hierro 47<br/>San Cortez</div>
+  </div>
+
+  <!-- Horario -->
+  <div class="loc-info-card">
+    <div class="loc-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+    </div>
+    <div class="loc-title">Horario</div>
+    <div class="loc-text">Lun–Vie: 9am – 8pm<br/>Sáb–Dom: 10am – 6pm</div>
+  </div>
+
+  <!-- Teléfono -->
+  <div class="loc-info-card">
+    <div class="loc-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </div>
+    <div class="loc-title">Teléfono</div>
+    <div class="loc-text">+34 912 456 789<br/>+34 912 456 790</div>
+  </div>
+
+  <!-- Correo -->
+  <div class="loc-info-card">
+    <div class="loc-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </div>
+    <div class="loc-title">Correo</div>
+    <div class="loc-text">info@Proposer-barber.com<br/>booking@Proposer-barber.com</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SVGs reutilizables -->
+<svg style="display:none"><defs>
+  <symbol id="fq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></symbol>
+  <symbol id="fq-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+  <symbol id="fq-info" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></symbol>
+</defs></svg>
+
+
+<!-- ══ FAQ ══ -->
+<section class="bg-[#0a0908] py-[80px] sm:py-[110px] px-4 sm:px-8 lg:px-[6%] relative overflow-hidden" id="faq-section">
+  <div class="absolute inset-0 pointer-events-none z-0 opacity-[.07]" style="background-image:var(--grunge);background-size:300px;"></div>
+
+  <div class="relative z-[1] max-w-[1140px] mx-auto">
+
+    <!-- Header -->
+    <div class="relative mb-12 sm:mb-16">
+      <div class="fq-ghost">07</div>
+      <div class="fq-overline"><span>Preguntas Frecuentes</span></div>
+      <h2 class="font-rye font-extrabold text-[clamp(1.6rem,3.2vw,2.4rem)] tracking-[.04em] uppercase leading-[1.05] mb-0" style="color:#f0ece4;">
+        PREGUNTAS <span class="word-gold">CLAVES</span>
+      </h2>
+      <div class="fq-rule"></div>
+      <p class="font-rally text-[.82rem] leading-[1.85] max-w-[440px] mt-3" style="color:#8a8580;">
+        Lo que necesitas saber, explicado simple. Sin vueltas. Sin complicaciones.
+      </p>
+    </div>
+
+    <!-- CTA strip top -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 px-5 py-4 mb-9 border border-[rgba(191,124,26,.18)] border-l-[3px] border-l-[#bf7c1a] bg-[rgba(191,124,26,.03)]">
+      <div class="flex items-start gap-3 flex-1">
+        <div class="w-8 h-8 rounded-full bg-[rgba(191,124,26,.1)] border border-[rgba(191,124,26,.3)] flex items-center justify-center text-[#bf7c1a] shrink-0 mt-[2px]">
+          <svg width="15" height="15"><use href="#fq-info"/></svg>
+        </div>
+        <p class="font-rally text-[.78rem] text-[#8a8580] leading-[1.65] m-0">
+          <strong class="text-[#f0ece4] font-bold block mb-[2px]">¿Tienes una pregunta que no está aquí?</strong>
+          Escríbeme al WhatsApp — te respondo en minutos.
+        </p>
+      </div>
+      <a href="https://wa.me/18098786115" target="_blank" rel="noopener"
+         class="flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-[11px] bg-[rgba(37,211,102,.07)] border border-[rgba(37,211,102,.25)] text-[#4ade80] font-rally font-bold text-[.7rem] tracking-[.1em] uppercase no-underline shrink-0 transition-all duration-200 hover:bg-[rgba(37,211,102,.14)] hover:border-[rgba(37,211,102,.45)]">
+        <svg width="13" height="13"><use href="#fq-wa"/></svg>Preguntar ahora
+      </a>
+    </div>
+
+    <!-- Accordion + Sidebar -->
+    <div class="fq-cols" style="display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:start;">
+      <div id="fq-accordion"></div>
+      <div class="fq-sidebar">
+        <div class="fq-stat-box" id="fq-stats"></div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-9 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 px-6 py-5 border border-[rgba(191,124,26,.2)] border-l-[3px] border-l-[#bf7c1a] bg-[rgba(191,124,26,.03)]">
+      <div>
+        <p class="font-rye text-[1.1rem] tracking-[.04em] text-[#f0ece4] leading-[1.2] mb-[6px]">
+          ¿Listo para tu <span class="word-gold">primer cliente?</span>
+        </p>
+        <p class="font-rally text-[.78rem] leading-[1.6] m-0">
+          <span class="line-gold" style="font-weight:600;">Si no llegan clientes, no pagas.</span>
+          <span style="color:#8a8580;"> Así de simple.</span>
+        </p>
+      </div>
+      <a href="https://wa.me/18098786115" target="_blank" rel="noopener"
+         class="flex items-center justify-center gap-[9px] w-full sm:w-auto px-6 py-[13px] bg-[rgba(37,211,102,.07)] border border-[rgba(37,211,102,.25)] text-[#4ade80] font-rally font-bold text-[.72rem] tracking-[.1em] uppercase no-underline shrink-0 transition-all duration-200 hover:bg-[rgba(37,211,102,.14)] hover:border-[rgba(37,211,102,.45)]">
+        <svg width="14" height="14"><use href="#fq-wa"/></svg>Comenzar ahora gratis
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="relative overflow-hidden bg-[#0a0908]" id="contact">
+  <div class="absolute inset-0 opacity-[.07] pointer-events-none" style="background-image:var(--grunge);background-size:300px;"></div>
+
+  <!-- Mobile image -->
+  <div class="relative bg-[#0a0908] justify-center pt-4 px-6 z-[2] hidden max-[768px]:flex">
+    <img src="img/barbero.png" alt="Barbero profesional en Proposer Barber" width="700" height="900" loading="lazy" decoding="async" class="block w-auto max-w-[95%] h-auto object-contain object-bottom" onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=85'"/>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0a0908] to-transparent pointer-events-none"></div>
+  </div>
+
+  <!-- Grid -->
+  <div class="relative z-[2] grid min-h-[620px] max-[768px]:grid-cols-1 min-[769px]:grid-cols-2">
+
+    <!-- Image col (tablet+) — más grande + fade bottom + imagen más arriba -->
+<div class="hidden min-[769px]:flex items-start justify-center relative bg-[#0a0908] overflow-hidden">
+  <img src="img/barbero.png" alt="Barbero profesional Proposer Barber" width="700" height="900" loading="lazy" decoding="async" class="block w-auto h-auto object-contain object-top relative z-[2] mt-10 min-[769px]:max-h-[580px] min-[769px]:max-w-[90%] min-[1024px]:max-h-[700px] min-[1024px]:max-w-[95%]" onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=85'"/>
+  <div class="contact-img-fade"></div>
+</div>
+
+    <!-- Form col -->
+    <div class="bg-[#0a0908] flex flex-col p-6 min-[769px]:p-8 min-[1024px]:pt-20 min-[1024px]:pl-14 min-[1024px]:items-start">
+      <div class="w-full max-w-[500px] mx-auto min-[769px]:mx-0">
+
+        <div class="relative mb-2">
+  <span class="font-rye text-[clamp(4rem,10vw,6rem)] leading-none text-[rgba(191,124,26,.05)] absolute -top-3 -left-2 select-none pointer-events-none uppercase">Cita</span>
+  <span class="font-rally text-[.65rem] tracking-[.28em] uppercase text-[#bf7c1a] block mb-3">— San Cortez</span>
+  <h2 class="font-rye text-[clamp(2rem,4vw,3rem)] leading-none tracking-[.04em] text-twht relative z-10">
+    RESERVA<br><span class="text-gold">TU CORTE.</span>
+  </h2>
+</div>
+<div class="flex items-center gap-3 my-4">
+  <span class="flex-1 h-px bg-[rgba(191,124,26,.15)]"></span>
+  <svg width="18" height="14" viewBox="0 0 28 22" fill="none"><path d="M4 18 L22 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><path d="M24 18 L6 4" stroke="#c9901d" stroke-width="1.4" stroke-linecap="round"/><circle cx="14" cy="11" r="1.8" fill="#c9901d"/></svg>
+  <span class="flex-1 h-px bg-[rgba(191,124,26,.15)]"></span>
+</div>
+<p class="font-rally text-[.8rem] leading-[1.8] text-[rgba(240,236,228,.52)] mb-6">
+  ¿Listo para un cambio? Reserva tu cita con uno de nuestros maestros y vive la experiencia del grooming de precisión en su máxima expresión.
+</p>
+
+        <form id="ct-form" class="flex flex-col gap-[5px]"
+              action="https://formsubmit.co/lunarojadigital@gmail.com"
+              method="POST">
+
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject"  value="Nueva Cita — Barbershop">
+          <input type="hidden" name="_captcha"  value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <!-- Day + Time -->
+          <div class="grid gap-[5px]" style="grid-template-columns:1.4fr 1fr;">
+            <div class="select-wrap relative">
+              <select name="day" class="form-field font-rally text-[.78rem] bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.14)] text-twht px-[14px] py-[13px] outline-none transition-all duration-200 w-full" required>
+                <option value="" disabled selected>Día</option>
+<option>Lunes</option><option>Martes</option><option>Miércoles</option>
+<option>Jueves</option><option>Viernes</option><option>Sábado</option><option>Domingo</option>
+              </select>
+            </div>
+            <input name="time" class="form-field font-rally text-[.78rem] bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.14)] text-twht px-[14px] py-[13px] outline-none transition-all duration-200 w-full" type="text" placeholder="Time" required/>
+          </div>
+
+          <!-- Service + Stylist -->
+          <div class="grid gap-[5px]" style="grid-template-columns:1.4fr 1fr;">
+            <div class="select-wrap relative">
+              <select name="service" class="form-field font-rally text-[.78rem] bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.14)] text-twht px-[14px] py-[13px] outline-none transition-all duration-200 w-full" required>
+                <option value="" disabled selected>Servicios</option>
+<option>Corte de Cabello</option><option>Afeitado con Toalla Caliente</option>
+<option>Esculpido de Barba</option><option>Peinado Profesional</option>
+              </select>
+            </div>
+            <div class="select-wrap relative">
+              <select name="stylist" class="form-field font-rally text-[.78rem] bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.14)] text-twht px-[14px] py-[13px] outline-none transition-all duration-200 w-full" required>
+                <option value="" disabled selected>Barbero</option>
+                <option>Andrew W.</option>
+                <option>Jake P.</option>
+                <option>Enrique S.</option>
+                <option>Barbara L.</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Name + Phone -->
+          <div class="grid grid-cols-2 gap-[5px]">
+            <input name="name"  class="form-field font-rally text-[.78rem] bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.14)] text-twht px-[14px] py-[13px] outline-none transition-all duration-200 w-full" type="text" placeholder="Nombre"  required/>
+            <input name="phone" class="form-field font-rally text-[.78rem] bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.14)] text-twht px-[14px] py-[13px] outline-none transition-all duration-200 w-full" type="tel"  placeholder="Telefono" required/>
+          </div>
+
+          <!-- Email -->
+          <input name="email" class="form-field font-rally text-[.78rem] bg-[rgba(255,255,255,.04)] border border-[rgba(255,255,255,.14)] text-twht px-[14px] py-[13px] outline-none transition-all duration-200 w-full" type="email" placeholder="Email" required/>
+
+          <button id="ct-submit"
+            class="font-rally font-semibold text-[.72rem] tracking-[.18em] uppercase text-twht bg-transparent border border-[rgba(255,255,255,.4)] px-9 py-[13px] cursor-pointer transition-all duration-[250ms] self-start mt-2 hover:bg-white/[.07] hover:border-white"
+            type="submit">Enviar</button>
+        </form>
+
+        <!-- Mensaje de éxito -->
+<div id="ct-success">
+  <strong>Solicitud de cita enviada ✓</strong>
+  <p>Confirmaremos tu reserva en breve.<br/>Revisa tu bandeja de entrada en el correo proporcionado.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer bg-[#0a0908] border-t border-[#1e1d1a] pt-[60px] px-[6%] relative">
+  <div class="footer-inner relative z-[1] max-w-[1100px] mx-auto">
+    <div class="footer-cols grid pb-12 border-b border-[#1e1d1a]" style="grid-template-columns:1.2fr 1.3fr 1fr 1fr;gap:40px;">
+      <!-- Columna 1: Logo -->
+      <div>
+        <img src="img/logo.png" alt="Proposer-Barber" width="160" height="78" loading="lazy" decoding="async" class="h-[78px] w-auto block -mb-2" onerror="this.style.display='none'"/>
+        <span class="font-rye text-[.95rem] text-gold tracking-[.04em] block leading-[1.2]">PPS-Barber</span> <span class="font-rally text-[.58rem] text-[#3e3d3a] tracking-[.14em] uppercase block mb-[18px]">barbería · San Cortez</span>
+        <div class="flex gap-[7px]">
+          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-fb"/></svg></a>
+          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="12" height="12"><use href="#ico-yt"/></svg></a>
+          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-ig"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Contacto -->
+      <div>
+        <h5 class="font-rally font-bold text-[.78rem] tracking-[.1em] uppercase text-twht mb-4">Contacto</h5>
+        <div class="flex gap-[10px] items-start mb-3"><svg class="w-[14px] h-[14px] flex-shrink-0 mt-px text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span class="font-rally text-[.75rem] text-[#5a5955] leading-[1.6]">+34 912 456 789</span></div>
+        <div class="flex gap-[10px] items-start mb-3"><svg class="w-[14px] h-[14px] flex-shrink-0 mt-px text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="font-rally text-[.75rem] text-[#5a5955] leading-[1.6]">info@Proposer-barber.com</span></div>
+        <div class="flex gap-[10px] items-start"><svg class="w-[14px] h-[14px] flex-shrink-0 mt-px text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span class="font-rally text-[.75rem] text-[#5a5955] leading-[1.6]">Av. del Hierro 47<br/>San Cortez</span></div>
+      </div>
+
+      <!-- Columna 3: Navegación -->
+      <div>
+        <h5 class="font-rally font-bold text-[.78rem] tracking-[.1em] uppercase text-twht mb-4">Navegación</h5>
+        <ul class="list-none p-0 m-0">
+          <li class="mb-[9px]"><a href="#hero" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Inicio</a></li>
+          <li class="mb-[9px]"><a href="#about" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Nosotros</a></li>
+          <li class="mb-[9px]"><a href="#services" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Servicios</a></li>
+          <li class="mb-[9px]"><a href="#portfolio" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Galería</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Más -->
+      <div>
+        <h5 class="font-rally font-bold text-[.78rem] tracking-[.1em] uppercase text-twht mb-4">Más</h5>
+        <ul class="list-none p-0 m-0">
+          <li class="mb-[9px]"><a href="#team" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Equipo</a></li>
+          <li class="mb-[9px]"><a href="#videos-section" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Videos</a></li>
+          <li class="mb-[9px]"><a href="#location" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Ubicación</a></li>
+          <li class="mb-[9px]"><a href="#contact" class="font-rally text-[.78rem] text-[#5a5955] no-underline transition-colors duration-200 hover:text-gold">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center py-[18px] font-rally text-[.68rem] text-[#5a5955] tracking-[.08em]">© 2026 Luna Roja Digital — Demo exclusiva para barberías</div>
+</footer>
+
+<!-- ══ MAP MODAL ══ -->
+<div id="map-modal" onclick="if(event.target===this)closeMapModal()" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#0d0c0a;border:1px solid rgba(191,124,26,.2);max-width:560px;width:100%;position:relative;overflow:hidden;">
+
+    <!-- Header del modal -->
+    <div style="padding:20px 24px 16px;border-bottom:1px solid rgba(191,124,26,.1);display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <span style="font-family:'Rye',serif;font-size:.9rem;color:#bf7c1a;display:block;letter-spacing:.05em;">Proposer Barber</span>
+        <span style="font-family:'Raleway',sans-serif;font-size:.68rem;color:rgba(255,255,255,.35);letter-spacing:.15em;text-transform:uppercase;">Av. del Hierro 47 · San Cortez</span>
+      </div>
+      <button onclick="closeMapModal()" style="background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1.2rem;line-height:1;padding:4px;transition:color .2s;" onmouseover="this.style.color='#bf7c1a'" onmouseout="this.style.color='rgba(255,255,255,.4)'">✕</button>
+    </div>
+
+    <!-- Mapa -->
+    <div style="position:relative;height:300px;background:#111;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2!2d-73.9857!3d40.7484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjIiTiA3M8KwNTknMDguNSJX!5e0!3m2!1ses!2sus!4v1000000000000"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Info inferior -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(191,124,26,.1);">
+      <div style="padding:16px 20px;border-right:1px solid rgba(191,124,26,.08);">
+        <span style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#bf7c1a;display:block;margin-bottom:5px;">Horario</span>
+        <span style="font-family:'Raleway',sans-serif;font-size:.75rem;color:rgba(255,255,255,.5);line-height:1.7;">Lun–Vie: 9am – 8pm<br/>Sáb–Dom: 10am – 6pm</span>
+      </div>
+      <div style="padding:16px 20px;">
+        <span style="font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#bf7c1a;display:block;margin-bottom:5px;">Teléfono</span>
+        <span style="font-family:'Raleway',sans-serif;font-size:.75rem;color:rgba(255,255,255,.5);line-height:1.7;">+34 912 456 789</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="padding:14px 20px;border-top:1px solid rgba(191,124,26,.08);">
+      <a href="https://maps.google.com" target="_blank" rel="noopener"
+        style="display:block;text-align:center;font-family:'Raleway',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#0a0908;background:#bf7c1a;padding:12px;text-decoration:none;transition:background .2s;"
+        onmouseover="this.style.background='#d4911f'" onmouseout="this.style.background='#bf7c1a'">
+        Abrir en Google Maps →
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openMapModal(){
+  const m = document.getElementById('map-modal');
+  m.style.display = 'flex';
+  requestAnimationFrame(() => m.style.opacity = '1');
+}
+function closeMapModal(){
+  document.getElementById('map-modal').style.display = 'none';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMapModal(); });
+</script>
+
+<script src="js/script.js" defer></script>
+<script src="js/portfolio.js" defer></script>
+<script src="js/team.js" defer></script>
+<script src="js/avatar.js" defer></script>
+<script src="js/contacto.js" defer></script>
+<script src="js/faq.js" defer></script>
+<script src="js/reviews.js" defer></script>
+<!--
+<script>
+
+// Bloquea clic derecho
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Detecta DevTools abierto y redirige o muestra mensaje
+(function(){
+  setInterval(function(){
+    var before = new Date();
+    debugger;
+    var after = new Date();
+    if(after - before > 100){
+      document.body.innerHTML = '<h1 style="text-align:center;margin-top:40vh;font-family:sans-serif">Acceso no autorizado</h1>';
+    }
+  }, 1000);
+})();
+
+// Bloquea atajos de teclado
+document.addEventListener('keydown', function(e){
+  // F12
+  if(e.keyCode === 123) e.preventDefault();
+  // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
+  if(e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) e.preventDefault();
+  if(e.ctrlKey && e.keyCode === 85) e.preventDefault();
+});
+
+</script>
+-->
+</body>
+</html>
