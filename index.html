@@ -3,46 +3,43 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Proposer-Barber</title>
+<meta name="description" content="Proposer Barber | Barbero Profesional en San Cortez. Cortes de precisión, degradados, afeitado con toalla caliente y cursos online de barbería. Reserva tu cita hoy."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://proposer-barber.netlify.app/"/>
+<meta property="og:title" content="Proposer Barber | Barbero Profesional en San Cortez - Cortes de Precisión"/>
+<meta property="og:description" content="Cortes de precisión, degradados modernos y afeitado con toalla caliente en San Cortez. Reserva tu cita con los mejores barberos."/>
+<meta property="og:image" content="https://proposer-barber.netlify.app/img/og-image.jpg"/>
+<meta property="og:url" content="https://proposer-barber.netlify.app/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Proposer Barber | Barbero Profesional en San Cortez - Cortes de Precisión"/>
+<meta name="twitter:description" content="Cortes de precisión, degradados modernos y afeitado con toalla caliente en San Cortez. Reserva tu cita con los mejores barberos."/>
+<meta name="twitter:image" content="https://proposer-barber.netlify.app/img/og-image.jpg"/>
+<title>Proposer Barber | Barbero Profesional en San Cortez - Cortes de Precisión</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://images.unsplash.com"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net"/>
 <link href="https://fonts.googleapis.com/css2?family=Rye&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Rye&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
-<!-- Swiper (mobile carousel) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<link rel="stylesheet" href="css/styles.css"/>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/team.css">
-<link rel="stylesheet" href="css/contacto.css">
-<link rel="stylesheet" href="css/faq.css">
-<link rel="stylesheet" href="css/portfolio.css">
-<link rel="stylesheet" href="css/reviews.css">
-<link rel="stylesheet" href="css/ubicacion.css">
-
+<link rel="preload" as="image" href="img/hero-1.avif" fetchpriority="high">
+<script src="js/bundle.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/es.js" defer></script>
+<link rel="stylesheet" href="css/main.css"/>
 <script>
   (function(){
-    var canvas = document.createElement('canvas');
-    if(!canvas.getContext || !canvas.getContext('2d')) return;
-    if(canvas.toDataURL('image/webp').indexOf('data:image/webp') !== 0) return;
-
-    document.addEventListener('DOMContentLoaded', function(){
-      document.querySelectorAll('img').forEach(function(img){
-        if(img.src) img.src = img.src
-          .replace(/img\/(.*?)\.(jpg|jpeg|png)(\?|$)/i, 'img/webp-optimized/$1.webp$3');
-        if(img.dataset.src) img.dataset.src = img.dataset.src
-          .replace(/img\/(.*?)\.(jpg|jpeg|png)(\?|$)/i, 'img/webp-optimized/$1.webp$3');
-      });
-    });
+    if(!('fetchPriority' in HTMLImageElement.prototype)) return;
+    if(document.documentElement.classList) document.documentElement.classList.add('webp');
   })();
 </script>
 </head>
 <body>
+
+<a href="#hero" class="sr-only focus:not-sr-only" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido</a>
 
 <!-- SVG defs -->
 <svg style="display:none"><defs>
@@ -59,7 +56,7 @@
 <nav class="nav-menu fixed top-0 right-0 bottom-0 z-[190] w-[min(420px,100vw)] bg-[#0a0907] transition-transform duration-[450ms] ease-[cubic-bezier(.77,0,.18,1)] flex flex-col overflow-hidden" id="nav-menu">
   <div class="nav-menu-deco absolute right-[-10px] bottom-[60px] font-rye text-[9rem] text-[rgba(191,124,26,.04)] leading-none pointer-events-none z-0 select-none">PB</div>
   <div class="relative z-[2] flex items-center justify-between px-9 pt-7">
-    <img src="img/logo.png" alt="Proposer Barber" width="160" height="40" loading="eager" decoding="async" class="h-10 w-auto opacity-85" onerror="this.style.display='none'"/>
+    <img src="img/logo.avif" alt="Proposer Barber" width="160" height="40" loading="eager" decoding="async" class="h-10 w-auto opacity-85" onerror="this.style.display='none'"/>
   </div>
   <div class="nav-menu-links relative z-[2] flex-1 flex flex-col justify-center px-9">
     <a href="#hero" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden first:border-t first:border-[rgba(191,124,26,.06)]"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">01</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Inicio</span></a>
@@ -71,14 +68,14 @@
     <a href="#contact" onclick="closeMenu()" class="relative flex items-baseline gap-[14px] no-underline py-[11px] border-b border-[rgba(191,124,26,.06)] overflow-hidden"><span class="nav-num font-rye text-[.48rem] text-[rgba(191,124,26,.28)] flex-shrink-0 transition-colors duration-200">07</span><span class="nav-label font-rally font-extrabold text-[clamp(.88rem,2.2vw,1.1rem)] tracking-[.15em] uppercase text-[rgba(240,235,225,.55)] transition-colors duration-[250ms]">Contacto</span></a>
   </div>
   <div class="relative z-[2] px-9 pt-6 pb-8 border-t border-[rgba(191,124,26,.1)]">
-    <a href="https://wa.me/18098786115" target="_blank" rel="noopener" class="flex items-center justify-center gap-[10px] w-full py-[14px] bg-[rgba(37,211,102,.08)] border border-[rgba(37,211,102,.28)] text-[rgba(37,211,102,.88)] font-rally text-[.7rem] font-bold tracking-[.14em] uppercase no-underline transition-all duration-[250ms] mb-[18px] hover:bg-[rgba(37,211,102,.16)] hover:border-[rgba(37,211,102,.5)] hover:text-[#25d366]">
+    <a href="https://wa.me/18098000000" target="_blank" rel="noopener" class="flex items-center justify-center gap-[10px] w-full py-[14px] bg-[rgba(37,211,102,.08)] border border-[rgba(37,211,102,.28)] text-[rgba(37,211,102,.88)] font-rally text-[.7rem] font-bold tracking-[.14em] uppercase no-underline transition-all duration-[250ms] mb-[18px] hover:bg-[rgba(37,211,102,.16)] hover:border-[rgba(37,211,102,.5)] hover:text-[#25d366]">
       <svg width="15" height="15"><use href="#ico-wa"/></svg>Quiero una web como esta
     </a>
     <div class="flex items-center gap-2">
       <span class="font-rally text-[.56rem] text-[rgba(191,124,26,.35)] tracking-[.12em] uppercase mr-1">Síguenos</span>
-      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-fb"/></svg></a>
-      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-ig"/></svg></a>
-      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="12" height="12"><use href="#ico-yt"/></svg></a>
+      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold" aria-label="Facebook"><svg width="11" height="11"><use href="#ico-fb"/></svg></a>
+      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold" aria-label="Instagram"><svg width="11" height="11"><use href="#ico-ig"/></svg></a>
+      <a href="#" class="w-[30px] h-[30px] border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.45)] no-underline transition-all duration-200 hover:border-gold hover:text-gold" aria-label="YouTube"><svg width="12" height="12"><use href="#ico-yt"/></svg></a>
     </div>
   </div>
 </nav>
@@ -87,13 +84,13 @@
 <header class="fixed top-0 left-0 right-0 z-[200] h-[70px] flex items-center justify-between px-[4%] bg-transparent pointer-events-none transition-[background] duration-300" id="site-header">
   <div class="pointer-events-auto"></div>
   <div class="flex items-center gap-[14px] pointer-events-auto">
-    <span class="text-[rgba(240,235,225,.88)] cursor-pointer transition-colors duration-[180ms] flex items-center hover:text-gold" onclick="openMapModal()">
+    <span class="text-[rgba(240,235,225,.88)] cursor-pointer transition-colors duration-[180ms] flex items-center hover:text-gold" onclick="openMapModal()" role="button" tabindex="0" aria-label="Abrir mapa">
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
     <circle cx="12" cy="9" r="2.5"/>
   </svg>
 </span>
-<span class="text-[rgba(240,235,225,.88)] cursor-pointer transition-colors duration-[180ms] flex items-center hover:text-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+<span class="text-[rgba(240,235,225,.88)] cursor-pointer transition-colors duration-[180ms] flex items-center hover:text-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" role="button" tabindex="0" aria-label="Reservar cita">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="4" width="18" height="18" rx="2"/>
     <line x1="16" y1="2" x2="16" y2="6"/>
@@ -115,10 +112,10 @@
   
   <!-- Slides de imágenes -->
   <div class="hero-slides absolute inset-0 z-[1]" id="hero-slides">
-    <div class="hero-slide active absolute inset-0"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1400&q=85" alt="Barbero" width="1400" height="900" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
-<div class="hero-slide absolute inset-0"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1400&q=85" alt="Barbero experto" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
-<div class="hero-slide absolute inset-0"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1400&q=85" alt="Barbería" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
-<div class="hero-slide absolute inset-0"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1400&q=85" alt="Estilismo" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+    <div class="hero-slide active absolute inset-0"><img src="img/hero-1.avif" alt="Barbero" width="800" height="900" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+<div class="hero-slide absolute inset-0"><img src="img/hero-2.avif" alt="Barbero experto" width="800" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+<div class="hero-slide absolute inset-0"><img src="img/hero-3.avif" alt="Barbería" width="800" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
+<div class="hero-slide absolute inset-0"><img src="img/hero-4.avif" alt="Estilismo" width="800" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover object-[center_top]"/></div>
   </div>
   
   <!-- Video animado (inicialmente oculto) -->
@@ -127,7 +124,7 @@
   </div>
   
   <!-- Logo -->
-  <div class="absolute top-[22px] left-[4%] z-[10]"><img src="img/logo.png" alt="Proposer-Barber" width="160" height="78" loading="eager" decoding="async" class="h-[clamp(56px,8vw,78px)] w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,.6)]" onerror="this.style.display='none'"/></div>
+  <div class="absolute top-[22px] left-[4%] z-[10]"><img src="img/logo.avif" alt="Proposer-Barber" width="160" height="78" loading="eager" decoding="async" class="h-[clamp(56px,8vw,78px)] w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,.6)]" onerror="this.style.display='none'"/></div>
   
   <!-- Elementos decorativos SVG reutilizados -->
   <svg class="absolute top-[28px] right-[7%] z-[6] w-[80px] h-[64px] pointer-events-none" viewBox="0 0 90 70" fill="none">
@@ -193,7 +190,7 @@
     <div class="relative pt-6 pl-6 self-stretch flex flex-col justify-center max-w-[420px] mx-auto md:mx-0 g-left">
       <div class="absolute top-0 left-0 w-[calc(100%-24px)] h-[calc(100%-16px)] border border-gold z-0 pointer-events-none"></div>
       <div class="relative z-10 overflow-hidden">
-        <img src="img/guiño.png" alt="Barbero experto en Proposer Barber" width="420" height="520" loading="lazy" decoding="async" class="block w-full object-cover object-top shadow-2xl grayscale contrast-[1.08] brightness-[0.88] min-h-[300px] max-h-[440px]" onerror="this.src='https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=700&q=80'"/>
+        <img src="img/guiño.avif" alt="Barbero experto en Proposer Barber" width="420" height="520" loading="lazy" decoding="async" class="block w-full object-cover object-top shadow-2xl grayscale contrast-[1.08] brightness-[0.88] min-h-[300px] max-h-[440px]" />
       </div>
     </div>
 
@@ -250,7 +247,7 @@
 
 <section class="relative overflow-hidden bg-[#0a0908]" id="services">
   <div class="services-bg-img absolute inset-0 z-0">
-    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1400&q=85" alt="" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale brightness-[.15] contrast-[1.2]"/>
+    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=70" alt="" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale brightness-[.15] contrast-[1.2]"/>
   </div>
   <div class="services-inner relative z-[2] max-w-[1200px] mx-auto py-[120px] px-[6%] grid grid-cols-2 gap-[80px] items-center">
     <div class="nnum top-20">01</div>
@@ -452,10 +449,10 @@
           <div class="font-rally text-[.5rem] tracking-[.14em] uppercase text-tgry mt-1">+240 reseñas verificadas</div>
         </div>
         <div class="flex gap-[10px]">
-          <button id="rv-prev" class="w-10 h-10 border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.5)] transition-all duration-200 hover:border-gold hover:text-gold">
+          <button id="rv-prev" class="w-10 h-10 border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.5)] transition-all duration-200 hover:border-gold hover:text-gold" aria-label="Reseña anterior">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2L3 7l6 5"/></svg>
           </button>
-          <button id="rv-next" class="w-10 h-10 border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.5)] transition-all duration-200 hover:border-gold hover:text-gold">
+          <button id="rv-next" class="w-10 h-10 border border-[rgba(191,124,26,.2)] flex items-center justify-center text-[rgba(191,124,26,.5)] transition-all duration-200 hover:border-gold hover:text-gold" aria-label="Reseña siguiente">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2l6 5-6 5"/></svg>
           </button>
         </div>
@@ -472,23 +469,7 @@
 </section>
 
 <script>
-(function(){
-  const swiper = new Swiper('#rv-swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    grabCursor: true,
-    loop: true,
-    speed: 700,
-    autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
-    scrollbar: { el: '.rv-scrollbar', draggable: true },
-    navigation: { prevEl: '#rv-prev', nextEl: '#rv-next' },
-    pagination: { el: '#rv-pagination', clickable: true },
-    breakpoints: {
-      0:   { spaceBetween: 14 },
-      768: { spaceBetween: 20 },
-    }
-  });
-})();
+
 </script>
 
 <!-- ══ GALERÍA ══ -->
@@ -617,7 +598,7 @@
 
       <div class="absolute bottom-0 left-0 right-0 z-20 px-5 pb-5">
         <div class="flex justify-end mb-2">
-          <button id="vd-mute" class="w-8 h-8 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all duration-200">
+          <button id="vd-mute" class="w-8 h-8 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all duration-200" aria-label="Silenciar / Activar sonido">
             <svg id="vd-icon-sound" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
             <svg id="vd-icon-muted" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="hidden"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
           </button>
@@ -642,10 +623,10 @@
 
     <!-- Mobile arrows -->
     <div class="flex md:hidden justify-center gap-3 mt-5">
-      <button id="vd-prev-mob" class="vd-arrow-btn">
+      <button id="vd-prev-mob" class="vd-arrow-btn" aria-label="Video anterior">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
       </button>
-      <button id="vd-next-mob" class="vd-arrow-btn">
+      <button id="vd-next-mob" class="vd-arrow-btn" aria-label="Video siguiente">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
       </button>
     </div>
@@ -767,7 +748,7 @@
 
   <!-- Foto interior -->
   <div class="location-photo-wrap">
-    <img src="img/barber-shop.png" alt="Interior de Proposer Barber en San Cortez" width="1000" height="667" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1000&q=85'"/>
+    <img src="img/barber-shop.avif" alt="Interior de Proposer Barber en San Cortez" width="1000" height="667" loading="lazy" decoding="async"/>
     <div class="photo-vignette"></div>
     <div class="photo-corner-mark"></div>
   </div>
@@ -856,7 +837,7 @@
           Escríbeme al WhatsApp — te respondo en minutos.
         </p>
       </div>
-      <a href="https://wa.me/18098786115" target="_blank" rel="noopener"
+      <a href="https://wa.me/18098000000" target="_blank" rel="noopener"
          class="flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-[11px] bg-[rgba(37,211,102,.07)] border border-[rgba(37,211,102,.25)] text-[#4ade80] font-rally font-bold text-[.7rem] tracking-[.1em] uppercase no-underline shrink-0 transition-all duration-200 hover:bg-[rgba(37,211,102,.14)] hover:border-[rgba(37,211,102,.45)]">
         <svg width="13" height="13"><use href="#fq-wa"/></svg>Preguntar ahora
       </a>
@@ -881,7 +862,7 @@
           <span style="color:#8a8580;"> Así de simple.</span>
         </p>
       </div>
-      <a href="https://wa.me/18098786115" target="_blank" rel="noopener"
+      <a href="https://wa.me/18098000000" target="_blank" rel="noopener"
          class="flex items-center justify-center gap-[9px] w-full sm:w-auto px-6 py-[13px] bg-[rgba(37,211,102,.07)] border border-[rgba(37,211,102,.25)] text-[#4ade80] font-rally font-bold text-[.72rem] tracking-[.1em] uppercase no-underline shrink-0 transition-all duration-200 hover:bg-[rgba(37,211,102,.14)] hover:border-[rgba(37,211,102,.45)]">
         <svg width="14" height="14"><use href="#fq-wa"/></svg>Comenzar ahora gratis
       </a>
@@ -896,7 +877,7 @@
 
   <!-- Mobile image -->
   <div class="relative bg-[#0a0908] justify-center pt-4 px-6 z-[2] hidden max-[768px]:flex">
-    <img src="img/barbero.png" alt="Barbero profesional en Proposer Barber" width="700" height="900" loading="lazy" decoding="async" class="block w-auto max-w-[95%] h-auto object-contain object-bottom" onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=85'"/>
+    <img src="img/barbero.avif" alt="Barbero profesional en Proposer Barber" width="700" height="900" loading="lazy" decoding="async" class="block w-auto max-w-[95%] h-auto object-contain object-bottom"/>
     <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0a0908] to-transparent pointer-events-none"></div>
   </div>
 
@@ -905,7 +886,7 @@
 
     <!-- Image col (tablet+) — más grande + fade bottom + imagen más arriba -->
 <div class="hidden min-[769px]:flex items-start justify-center relative bg-[#0a0908] overflow-hidden">
-  <img src="img/barbero.png" alt="Barbero profesional Proposer Barber" width="700" height="900" loading="lazy" decoding="async" class="block w-auto h-auto object-contain object-top relative z-[2] mt-10 min-[769px]:max-h-[580px] min-[769px]:max-w-[90%] min-[1024px]:max-h-[700px] min-[1024px]:max-w-[95%]" onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=85'"/>
+  <img src="img/barbero.avif" alt="Barbero profesional Proposer Barber" width="700" height="900" loading="lazy" decoding="async" class="block w-auto h-auto object-contain object-top relative z-[2] mt-10 min-[769px]:max-h-[580px] min-[769px]:max-w-[90%] min-[1024px]:max-h-[700px] min-[1024px]:max-w-[95%]" />
   <div class="contact-img-fade"></div>
 </div>
 
@@ -930,7 +911,7 @@
 </p>
 
         <form id="ct-form" class="flex flex-col gap-[5px]"
-              action="https://formsubmit.co/lunarojadigital@gmail.com"
+              action="https://formsubmit.co/demo@proposer-barber.com"
               method="POST">
 
           <!-- FormSubmit config -->
@@ -1000,12 +981,12 @@
     <div class="footer-cols grid pb-12 border-b border-[#1e1d1a]" style="grid-template-columns:1.2fr 1.3fr 1fr 1fr;gap:40px;">
       <!-- Columna 1: Logo -->
       <div>
-        <img src="img/logo.png" alt="Proposer-Barber" width="160" height="78" loading="lazy" decoding="async" class="h-[78px] w-auto block -mb-2" onerror="this.style.display='none'"/>
+        <img src="img/logo.avif" alt="Proposer-Barber" width="160" height="78" loading="lazy" decoding="async" class="h-[78px] w-auto block -mb-2"/>
         <span class="font-rye text-[.95rem] text-gold tracking-[.04em] block leading-[1.2]">PPS-Barber</span> <span class="font-rally text-[.58rem] text-[#3e3d3a] tracking-[.14em] uppercase block mb-[18px]">barbería · San Cortez</span>
         <div class="flex gap-[7px]">
-          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-fb"/></svg></a>
-          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="12" height="12"><use href="#ico-yt"/></svg></a>
-          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold"><svg width="11" height="11"><use href="#ico-ig"/></svg></a>
+          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold" aria-label="Facebook"><svg width="11" height="11"><use href="#ico-fb"/></svg></a>
+          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold" aria-label="YouTube"><svg width="12" height="12"><use href="#ico-yt"/></svg></a>
+          <a href="#" class="w-7 h-7 rounded-full border border-[#2a2925] flex items-center justify-center text-[#5a5955] no-underline transition-all duration-200 hover:border-gold hover:text-gold" aria-label="Instagram"><svg width="11" height="11"><use href="#ico-ig"/></svg></a>
         </div>
       </div>
 
@@ -1053,7 +1034,7 @@
         <span style="font-family:'Rye',serif;font-size:.9rem;color:#bf7c1a;display:block;letter-spacing:.05em;">Proposer Barber</span>
         <span style="font-family:'Raleway',sans-serif;font-size:.68rem;color:rgba(255,255,255,.35);letter-spacing:.15em;text-transform:uppercase;">Av. del Hierro 47 · San Cortez</span>
       </div>
-      <button onclick="closeMapModal()" style="background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1.2rem;line-height:1;padding:4px;transition:color .2s;" onmouseover="this.style.color='#bf7c1a'" onmouseout="this.style.color='rgba(255,255,255,.4)'">✕</button>
+      <button onclick="closeMapModal()" aria-label="Cerrar mapa" style="background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1.2rem;line-height:1;padding:4px;transition:color .2s;" onmouseover="this.style.color='#bf7c1a'" onmouseout="this.style.color='rgba(255,255,255,.4)'">✕</button>
     </div>
 
     <!-- Mapa -->
@@ -1099,40 +1080,7 @@ function closeMapModal(){
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMapModal(); });
 </script>
 
-<script src="js/script.js" defer></script>
-<script src="js/portfolio.js" defer></script>
-<script src="js/team.js" defer></script>
-<script src="js/avatar.js" defer></script>
-<script src="js/contacto.js" defer></script>
-<script src="js/faq.js" defer></script>
-<script src="js/reviews.js" defer></script>
 
-<script>
-
-// Bloquea clic derecho
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-// Detecta DevTools abierto y redirige o muestra mensaje
-(function(){
-  setInterval(function(){
-    var before = new Date();
-    debugger;
-    var after = new Date();
-    if(after - before > 100){
-      document.body.innerHTML = '<h1 style="text-align:center;margin-top:40vh;font-family:sans-serif">Acceso no autorizado</h1>';
-    }
-  }, 1000);
-})();
-
-// Bloquea atajos de teclado
-document.addEventListener('keydown', function(e){
-  // F12
-  if(e.keyCode === 123) e.preventDefault();
-  // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
-  if(e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) e.preventDefault();
-  if(e.ctrlKey && e.keyCode === 85) e.preventDefault();
-});
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 </body>
 </html>
